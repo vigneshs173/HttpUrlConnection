@@ -19,7 +19,7 @@ public class PostRequestDemo {
             con.setRequestProperty("Accept", "application/json");
 
             con.setDoOutput(true);
-            String jsonInputString = "{\"studentId\": 7000, \"firstName\": \"MOOO\", \"email\": \"vicky.dass@example.com\"}";
+            String jsonInputString = "{\"studentId\": 67000, \"firstName\": \"MOOO\", \"email\": \"vicky.dass@example.com\"}";
             try (OutputStream os = con.getOutputStream()) {
                 byte[] input = jsonInputString.getBytes("utf-8");
                 os.write(input, 0, input.length);
