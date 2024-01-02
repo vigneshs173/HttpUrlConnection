@@ -30,6 +30,10 @@ public class PathVariable {
                 JSONObject jsonObject=new JSONObject(test);
                 String actualJson=jsonObject.toString(4);
                 System.out.println("Response from server: " + actualJson);
+
+                int statusCode = con.getResponseCode();
+                String statusMessage = con.getResponseMessage();
+                System.out.println("Response Code : " + statusCode + " " + statusMessage);
             }
 
             con.disconnect();

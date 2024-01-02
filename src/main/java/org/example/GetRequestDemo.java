@@ -12,13 +12,17 @@ public class GetRequestDemo {
     public static void main(String[] args) {
         try {
 
-            URL url = new URL("http://localhost:8080/student/getAll");
+            URL url = new URL("http://localhost:8080/student/getAllll");
 
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
             con.setRequestMethod("GET");
 
             con.setRequestProperty("Accept", "application/json");
+
+            int statusCode = con.getResponseCode();
+            String statusMessage = con.getResponseMessage();
+            System.out.println("Response Code : "+statusCode+" "+statusMessage);
 
             try (BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"))) {
                 String response = "";
@@ -32,6 +36,7 @@ public class GetRequestDemo {
                 JSONObject jsonObject=new JSONObject(test);
                 String actualJson=jsonObject.toString(4);
                 System.out.println("Response  :"+ actualJson);
+
             }
             con.disconnect();
 

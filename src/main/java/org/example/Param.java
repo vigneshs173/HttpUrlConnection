@@ -13,13 +13,11 @@ public class Param {
     public static void main(String[] args) {
         try {
 
-            String studentId = "4444";
-            String firstName = "KARUPPU FIRE";
-            String email = "samy.dass@example.com";
+            String studentId = "90180";
+            String firstName = "FIRE";
+            String email = "aaa.dass@example.com";
 
             String apiURL = "http://localhost:8080/student/studentParam?";
-
-
 
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -28,10 +26,10 @@ public class Param {
             con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             con.setRequestProperty("Accept", "application/json");
 
-
             con.setDoOutput(true);
+
             try (OutputStream os = con.getOutputStream()) {
-                String param = "studentId=" +studentId+ "&firstName="+firstName+ "&email="+email;
+                String param = "studentId=" + studentId + "&firstName=" + firstName + "&email=" + email;
                 byte[] input = param.getBytes("utf-8");
                 os.write(input, 0, input.length);
             }
@@ -42,11 +40,18 @@ public class Param {
                 while ((res = br.readLine()) != null) {
                     response += res.trim();
                 }
-                String test=response.toString();
-                JSONObject jsonObject=new JSONObject(test);
-                String actualJson=jsonObject.toString(4);
+                String test = response.toString();
+                JSONObject jsonObject = new JSONObject(test);
+                String actualJson = jsonObject.toString(4);
                 System.out.println("Response from server: " + actualJson);
+
+                int statusCode = con.getResponseCode();
+                String statusMessage = con.getResponseMessage();
+                System.out.println("Response Code : " + statusCode + " " + statusMessage);
+
             }
+
+
 
             con.disconnect();
 
