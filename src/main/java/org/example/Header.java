@@ -1,7 +1,6 @@
 package org.example;
 
 import org.json.JSONObject;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.BufferedReader;
@@ -12,16 +11,10 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Base64;
-import java.util.List;
 
 public class Header {
-
-
     public static final String SECRET_KEY = "igrsdjkkeuhdiwdh";
-
     public static void main(String[] args) {
-
-
         try {
             String firstName = "77";
             String email = "uusd.dass@example.com";
