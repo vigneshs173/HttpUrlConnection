@@ -16,8 +16,8 @@ public class Header {
     public static final String SECRET_KEY = "igrsdjkkeuhdiwdh";
     public static void main(String[] args) {
         try {
-            String firstName = "77";
-            String email = "uusd.dass@example.com";
+            String firstName = "173";
+            String email = "vicky@gamil.com";
 
             String encodedFirstName = aesEncrypt(firstName);
             String encodedEmail = aesEncrypt(email);
